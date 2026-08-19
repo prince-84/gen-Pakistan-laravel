@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-corporate-primary: #0f172a;
+    --color-corporate-secondary: #334155;
+    --color-corporate-accent: #e61c24;
+    --color-gen-teal: #1e40af;
+    --color-gen-red: #e61c24;
+    --color-gen-dark: #0f172a;
+    --color-gen-gray: #f1f5f9;
+    --color-gen-footer: #020617;
+}
+
+:root {
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --gen-teal: #1e40af;
+    --gen-red: #e61c24;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+}
+
+.container-custom {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.btn-primary {
+    background-color: var(--gen-red);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.section-title {
+    color: #666;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
