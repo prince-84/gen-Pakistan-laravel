@@ -1,21 +1,294 @@
 @extends('layouts.app')
 
-@section('title', 'PAGE_TITLE | GEN Pakistan')
+@section('title', 'Contact GEN | Global Entrepreneurship Network')
 
-@section('content')
-    <main class="min-h-screen bg-white">
-        <section class="py-16 md:py-24 bg-slate-50 border-b border-slate-100">
-            <div class="container-custom text-center">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-                    Contact
-                </h1>
-            </div>
-        </section>
+@section('content') <main class="min-h-screen bg-white pb-24">
 
-        <section class="py-16 md:py-24">
-            <div class="container-custom max-w-4xl mx-auto">
-                <p class="text-slate-600 text-lg">Content coming soon...</p>
+    <div class="h-8 md:h-16"></div>
+
+    <section class="pt-8 pb-8">
+        <div class="container-custom max-w-6xl mx-auto">
+
+            <div class="flex flex-col lg:flex-row gap-16 md:gap-24">
+
+                {{-- Left Column: Form --}}
+                <div class="w-full lg:w-[60%]">
+
+                    <form class="space-y-8">
+
+                        {{-- First Name --}}
+                        <div class="space-y-2">
+                            <label for="firstName" class="block text-sm font-bold text-slate-800">
+                                First Name <span class="text-red-600">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                required
+                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
+                            >
+                        </div>
+
+                        {{-- Last Name --}}
+                        <div class="space-y-2">
+                            <label for="lastName" class="block text-sm font-bold text-slate-800">
+                                Last Name <span class="text-red-600">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="lastName"
+                                required
+                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
+                            >
+                        </div>
+
+                        {{-- Email --}}
+                        <div class="space-y-2">
+                            <label for="email" class="block text-sm font-bold text-slate-800">
+                                Your email address <span class="text-red-600">*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
+                            >
+                        </div>
+
+                        {{-- Subject --}}
+                        <div class="space-y-2">
+                            <label for="subject" class="block text-sm font-bold text-slate-800">
+                                Subject <span class="text-red-600">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                required
+                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
+                            >
+                        </div>
+
+                        {{-- Message --}}
+                        <div class="space-y-2">
+                            <label for="message" class="block text-sm font-bold text-slate-800">
+                                Message <span class="text-red-600">*</span>
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                required
+                                rows="8"
+                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white resize-y"
+                            ></textarea>
+                        </div>
+
+                        {{-- CAPTCHA Placeholder --}}
+                        <div class="space-y-2">
+
+                            <label class="block text-sm font-bold text-slate-800 mb-4">
+                                CAPTCHA <span class="text-red-600">*</span>
+                            </label>
+
+                            <div class="w-full md:w-[300px] h-[70px] bg-slate-50 border border-slate-200 rounded flex items-center justify-between px-4">
+
+                                <div class="flex items-center gap-3">
+                                    <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="white"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                    </div>
+
+                                    <span class="text-sm font-medium text-slate-700">
+                                        Success!
+                                    </span>
+                                </div>
+
+                                <div class="flex flex-col items-end">
+                                    <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">
+                                        CLOUDFLARE
+                                    </span>
+                                    <span class="text-[8px] text-slate-400">
+                                        Privacy - Terms
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <p class="text-[11px] text-slate-500 italic mt-3">
+                                This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.
+                            </p>
+
+                        </div>
+
+                        {{-- Action Buttons --}}
+                        <div class="flex flex-wrap gap-4 pt-4">
+
+                            <button
+                                type="submit"
+                                class="px-8 py-3 bg-[#E61C24] hover:bg-red-700 text-white font-bold text-sm rounded transition-colors shadow-sm"
+                            >
+                                Send message
+                            </button>
+
+                            <button
+                                type="button"
+                                class="px-8 py-3 bg-[#E61C24] hover:bg-red-700 text-white font-bold text-sm rounded transition-colors shadow-sm"
+                            >
+                                Preview
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    {{-- Support Text --}}
+                    <div class="mt-16 pt-8 border-t border-slate-100">
+                        <p class="text-[13px] text-slate-500">
+                            Having trouble with your account or need technical support?
+
+                            <a href="#" class="text-corporate-accent hover:underline font-semibold">
+                                Open a new support ticket here.
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+
+                {{-- Right Column: Contact Information --}}
+                <div class="w-full lg:w-[40%]">
+
+                    <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.25em] mb-8">
+                        CONTACT GEN
+                    </h2>
+
+                    <div class="space-y-6 text-[14px] text-slate-600 leading-relaxed mb-10">
+
+                        <p>
+                            We would love to hear from you. If you have questions or feedback for GEN, please complete this form and a customer service team member will respond within two (2) business days.
+                        </p>
+
+                        <p>
+                            If you prefer, you can also call us at the number below. Voice messages will also be answered within two (2) business days.
+                        </p>
+
+                        <p>
+                            Thanks for your interest in GEN.
+                        </p>
+
+                    </div>
+
+                    {{-- Phone Number --}}
+                    <div class="flex items-center gap-3 mb-10">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-corporate-accent"
+                        >
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 219.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .72.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+
+                        <a
+                            href="tel:+12026834100"
+                            class="text-lg font-bold text-corporate-accent hover:text-red-700 transition-colors"
+                        >
+                            +1 (202) 683-4100
+                        </a>
+
+                    </div>
+
+                    {{-- Quote Box --}}
+                    <div class="bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-xl p-8 mb-12 relative">
+
+                        <div class="absolute -top-3 -left-2 text-4xl text-slate-200 font-serif leading-none opacity-50">
+                            "
+                        </div>
+
+                        <p class="text-[14px] text-slate-500 italic leading-relaxed relative z-10">
+                            The Global Entrepreneurship Network operates programs in 200 countries aimed at making it easier for anyone, anywhere to start and scale a business.
+                        </p>
+
+                        <div class="absolute -bottom-6 -right-2 text-4xl text-slate-200 font-serif leading-none opacity-50">
+                            "
+                        </div>
+
+                    </div>
+
+                    {{-- Social Follow --}}
+                    <div>
+
+                        <h3 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.25em] mb-4">
+                            FOLLOW GEN
+                        </h3>
+
+                        <div class="flex items-center gap-4">
+
+                            <a href="#" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                            </a>
+
+                            <a href="#" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                                </svg>
+                            </a>
+
+                            <a href="#" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect width="4" height="12" x="2" y="9"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </a>
+
+                            <a href="#" class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                </svg>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-        </section>
-    </main>
+
+        </div>
+    </section>
+
+</main>
+```
+
 @endsection
