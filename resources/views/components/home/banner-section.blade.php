@@ -1,68 +1,95 @@
-<section class="py-24 bg-corporate-primary text-white overflow-hidden" id="bannerSection">
-    <div class="container-custom">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="banner-text">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                    Join the Global Entrepreneurship Movement
-                </h2>
-                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                    Be part of a network of 200+ countries working together to empower entrepreneurs and build stronger ecosystems.
-                </p>
-                <button class="bg-corporate-accent hover:bg-opacity-90 text-white px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-300 shadow-lg hover:shadow-corporate-accent/50 hover:-translate-y-1">
-                    Get Involved
-                </button>
+<section id="bannerSection" class="banner-section relative py-32 overflow-hidden bg-corporate-primary">
+    {{-- Background Image with Overlay --}}
+    <div class="absolute inset-0 z-0">
+        <img
+            src="/images/corporate_banner_bg.png"
+            alt="Corporate Business Collaboration"
+            class="banner-bg-anim w-full h-full object-cover opacity-50 mix-blend-overlay"
+        />
+
+        <div class="absolute inset-0 bg-gradient-to-r from-corporate-primary/95 via-corporate-primary/75 to-corporate-primary/40"></div>
+    </div>
+
+    <div class="container-custom relative z-10">
+        <div class="max-w-3xl">
+
+            {{-- Section Label --}}
+            <div class="banner-content-anim flex items-center gap-3 mb-6">
+                <div class="h-0.5 w-12 bg-corporate-accent rounded-full"></div>
+
+                <span class="text-sm font-black tracking-[0.2em] text-corporate-accent uppercase">
+                    Accelerate Growth
+                </span>
             </div>
 
-            <div class="banner-features">
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-12 border border-white/20">
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-corporate-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <span class="text-2xl font-bold text-corporate-accent">✓</span>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2">Global Network</h3>
-                                <p class="text-slate-300">Connect with entrepreneurs worldwide and expand your opportunities.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-corporate-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <span class="text-2xl font-bold text-corporate-accent">✓</span>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2">Expert Mentorship</h3>
-                                <p class="text-slate-300">Learn from industry leaders and accelerate your growth.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-corporate-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                <span class="text-2xl font-bold text-corporate-accent">✓</span>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2">Funding Opportunities</h3>
-                                <p class="text-slate-300">Access capital and investment for your entrepreneurial ventures.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {{-- Heading --}}
+            <h3 class="banner-content-anim text-4xl md:text-5xl lg:text-[42px] font-semibold text-white tracking-tight leading-[1.2] mb-8">
+                Join the Global Network of Forward-Thinking Enterprise Leaders
+            </h3>
+
+            {{-- Description --}}
+            <p class="banner-content-anim text-slate-300 text-lg leading-relaxed mb-10 max-w-2xl font-medium">
+                Unlock exclusive access to strategic resources, high-level networking, and global market expansion opportunities. We empower visionary businesses to scale globally.
+            </p>
+
+            {{-- Buttons --}}
+            <div class="banner-content-anim flex flex-col sm:flex-row gap-5">
+                <a
+                    href="/contact"
+                    class="inline-flex justify-center items-center bg-corporate-accent hover:bg-sky-500 text-white px-8 py-4 rounded-xl font-bold tracking-wide shadow-lg shadow-corporate-accent/30 hover:-translate-y-1 transition-all duration-300"
+                >
+                    Become a Member
+                </a>
+
+                <a
+                    href="/about"
+                    class="inline-flex justify-center items-center bg-transparent border border-slate-500 hover:border-white text-white px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-300 hover:bg-white/5"
+                >
+                    Learn More About Us
+                </a>
             </div>
+
         </div>
     </div>
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     gsap.registerPlugin(ScrollTrigger);
-    
-    gsap.from("#bannerSection .banner-text, #bannerSection .banner-features", {
+
+    const section = document.getElementById('bannerSection');
+
+    if (!section) return;
+
+    // Content entrance animation
+    gsap.from('#bannerSection .banner-content-anim', {
         scrollTrigger: {
-            trigger: "#bannerSection",
-            start: "top 80%",
+            trigger: section,
+            start: 'top 80%',
         },
-        x: (index) => index === 0 ? -100 : 100,
+        y: 50,
         opacity: 0,
         duration: 1.2,
-        ease: "power3.out"
+        stagger: 0.2,
+        ease: 'power3.out'
     });
+
+    // Background parallax / scale animation
+    gsap.fromTo(
+        '#bannerSection .banner-bg-anim',
+        {
+            scale: 1.1
+        },
+        {
+            scale: 1,
+            scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.5
+            }
+        }
+    );
 });
 </script>
+

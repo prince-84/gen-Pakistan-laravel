@@ -1,70 +1,46 @@
-<section class="py-24 bg-slate-50 overflow-hidden" id="supportersSection">
-    <div class="container-custom">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-corporate-primary mb-6">
-                Supported By
-            </h2>
-            <p class="text-slate-600 max-w-2xl mx-auto text-lg">
-                Partner organizations dedicated to fostering entrepreneurship in Pakistan.
-            </p>
-        </div>
+<section id="supportersSection"
+    class="supporters-section py-24 bg-slate-50 border-t border-slate-200 overflow-hidden">
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 supporters-anim">
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex items-center justify-center min-h-[140px] group hover:-translate-y-1">
-                <div class="text-center">
-                    <div class="text-sm font-bold text-slate-600 group-hover:text-corporate-accent transition-colors">Partner Organization</div>
+    <div class="container-custom text-center">
+
+        <h2 class="supporter-anim text-sm font-bold tracking-widest text-slate-400 uppercase mb-12 will-change-[transform,opacity]">
+            Trusted Strategic Partners
+        </h2>
+
+        <div class="supporter-anim flex flex-wrap items-center justify-center gap-16 opacity-70 hover:opacity-100 transition-opacity duration-700 will-change-[transform,opacity]">
+
+            {{-- Placeholder for corporate partner logo --}}
+            <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer">
+
+                <div class="relative flex items-center justify-center">
+                    <span class="text-3xl font-extrabold text-corporate-primary tracking-tighter">
+                        GLOBAL<span class="text-corporate-accent uppercase">CORP</span>
+                    </span>
                 </div>
             </div>
-
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex items-center justify-center min-h-[140px] group hover:-translate-y-1">
-                <div class="text-center">
-                    <div class="text-sm font-bold text-slate-600 group-hover:text-corporate-accent transition-colors">Partner Organization</div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex items-center justify-center min-h-[140px] group hover:-translate-y-1">
-                <div class="text-center">
-                    <div class="text-sm font-bold text-slate-600 group-hover:text-corporate-accent transition-colors">Partner Organization</div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex items-center justify-center min-h-[140px] group hover:-translate-y-1">
-                <div class="text-center">
-                    <div class="text-sm font-bold text-slate-600 group-hover:text-corporate-accent transition-colors">Partner Organization</div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex items-center justify-center min-h-[140px] group hover:-translate-y-1">
-                <div class="text-center">
-                    <div class="text-sm font-bold text-slate-600 group-hover:text-corporate-accent transition-colors">Partner Organization</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-16">
-            <button class="bg-corporate-primary hover:bg-corporate-secondary text-white px-8 py-4 rounded-xl font-bold tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                Become a Partner
-            </button>
         </div>
     </div>
 </section>
 
 <script>
-function initSupportersAnimations() {
+document.addEventListener('DOMContentLoaded', function () {
     gsap.registerPlugin(ScrollTrigger);
-    
-    gsap.from(".supporters-anim > div", {
+
+    const section = document.getElementById('supportersSection');
+
+    if (!section) return;
+
+    gsap.from('#supportersSection .supporter-anim', {
         scrollTrigger: {
-            trigger: ".supporters-anim",
-            start: "top 80%",
+            trigger: section,
+            start: 'top 90%',
         },
         y: 80,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out"
+        duration: 1.5,
+        stagger: 0.2,
+        scale: 0.8,
+        ease: 'power4.out'
     });
-}
-
-document.addEventListener('DOMContentLoaded', initSupportersAnimations);
+});
 </script>

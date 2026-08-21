@@ -21,7 +21,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {{-- 1. Business Consultancy --}}
-            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-transform bg-corporate-primary text-white shadow-xl shadow-corporate-primary/10">
+            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-[transform,opacity] bg-corporate-primary text-white shadow-xl shadow-corporate-primary/10">
 
                 <div class="flex justify-between items-start mb-6">
                     <div class="bg-transparent text-white">
@@ -85,7 +85,7 @@
             </div>
 
             {{-- 2. Training and Development --}}
-            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-transform bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-[transform,opacity] bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
 
                 <div class="flex justify-between items-start mb-6">
                     <div class="bg-transparent text-slate-700">
@@ -144,7 +144,7 @@
             </div>
 
             {{-- 3. Networking and Event --}}
-            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-transform bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-[transform,opacity] bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
 
                 <div class="flex justify-between items-start mb-6">
                     <div class="bg-transparent text-slate-700">
@@ -205,7 +205,7 @@
             </div>
 
             {{-- 4. Marketing and Promotional --}}
-            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-transform bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-[transform,opacity] bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
 
                 <div class="flex justify-between items-start mb-6">
                     <div class="bg-transparent text-slate-700">
@@ -266,7 +266,7 @@
             </div>
 
             {{-- 5. Investment and Funding --}}
-            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-transform bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-[transform,opacity] bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
 
                 <div class="flex justify-between items-start mb-6">
                     <div class="bg-transparent text-slate-700">
@@ -325,7 +325,7 @@
             </div>
 
             {{-- 6. Technology and Innovation --}}
-            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-transform bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="service-card-anim rounded-[20px] p-8 flex flex-col relative will-change-[transform,opacity] bg-white text-slate-800 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
 
                 <div class="flex justify-between items-start mb-6">
                     <div class="bg-transparent text-slate-700">
@@ -387,7 +387,7 @@
         </div>
 
         {{-- Explore All Services --}}
-        <div class="services-btn-anim mt-16 text-center will-change-transform">
+        <div class="services-btn-anim mt-16 text-center will-change-[transform,opacity]">
             <a href="/services"
                class="inline-flex justify-center items-center bg-corporate-primary hover:bg-corporate-secondary text-white px-10 py-4 rounded-xl font-bold tracking-wide shadow-lg shadow-corporate-primary/20 hover:-translate-y-1 transition-all duration-300">
                 Explore All Services
