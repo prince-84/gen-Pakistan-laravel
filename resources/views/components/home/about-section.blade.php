@@ -21,11 +21,11 @@
                 <div class="about-anim text-slate-600 leading-relaxed space-y-8 mb-12 max-w-3xl font-medium">
 
                     <p>
-                        GEN Pakistan provides a premier platform to celebrate the annual Global Entrepreneurship Week campaign, highlighting the successes and impacts of Pakistan's most dynamic entrepreneurs. We strive to reach new audiences and expand the horizons of those who consider embarking on their entrepreneurial journey.
+                        GEN began working in Pakistan in 2008 when it launched Global Entrepreneurship Week (GEW). The first campaign focused on catalyzing Pakistan’s entrepreneurial community and held build a consensus around the wide-ranging benefits of entrepreneurship. Each successive year drew in steadily higher-profile champions and greater government attention, building the campaign into a national movement. GEN's partnerships reached across the countr y to include chambers of commerce, incubators, and universities. In 2019, GEN established a Startup Huddle chapter in Lahore, hosted by Innovation District 92, to support founders. In 2022, GEN established a registered affiliate, GEN Pakistan, to carry its work forward on a year-round basis and added Huddle chapters in Islamabad and Karachi.
                     </p>
 
                     <p>
-                        Launched in 2011, our mandate is to fortify Pakistan's entrepreneurship ecosystem. We achieve this by fostering collaborative networks and pioneering initiatives among founders, enterprise leaders, investors, policymakers, and strategic support organizations.
+                        GEN maintains relationships with a broad range of Pakistani institutions, including the Prime Minister's Office, the Senate of Pakistan, the Higher Education Commission, the Punjab Small Industries Corporation, the Arfa Karim Foundation, Ashreitech, and Ejad Labs. To extend its reach, GEN has worked with National Incubation Center campuses in Hyderabad and Peshawar, and hosted GEW programming and pitch competitions for founders in Khyber Pakhtunkhwa and Sindh.
                     </p>
 
                 </div>
