@@ -42,6 +42,8 @@
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">About Us</a></li>
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Strategic Partners</a></li>
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Annual Reports</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Global Presence</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Excellence Awards</a></li>
                     <li><a href="/contact" class="hover:text-corporate-accent transition-colors duration-300">Contact</a></li>
                 </ul>
             </div>
@@ -51,6 +53,8 @@
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Enterprise Strategy</a></li>
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Market Expansion</a></li>
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Technology Consulting</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Research & Insights</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Executive Bureau</a></li>
                 </ul>
             </div>
             <div>
@@ -59,6 +63,7 @@
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Ecosystem Hubs</a></li>
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Founder Alliance</a></li>
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Investment Council</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Mentorship Board</a></li>
                 </ul>
             </div>
             <div>
@@ -66,6 +71,8 @@
                 <ul class="space-y-4 text-sm font-medium">
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Empowerment Funds</a></li>
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Startup Accelerators</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Venture Capital</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Policy Advocacy</a></li>
                 </ul>
             </div>
             <div>
@@ -73,6 +80,8 @@
                 <ul class="space-y-4 text-sm font-medium">
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Annual Congress</a></li>
                     <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">GEW Week</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Market Exchange</a></li>
+                    <li><a href="#" class="hover:text-corporate-accent transition-colors duration-300">Global Summits</a></li>
                 </ul>
             </div>
         </div>

@@ -323,8 +323,33 @@
                     </div>
                 </div>
 
-                <!-- Contact Link -->
-                <a href="/contact" class="text-sm font-semibold text-slate-600 hover:text-corporate-accent uppercase tracking-wide transition-colors duration-300">Contact</a>
+                <!-- Contact Menu -->
+                <div class="relative group/nav py-6 -my-6">
+                    <a href="/contact" class="text-sm font-semibold text-slate-600 group-hover/nav:text-corporate-accent flex items-center gap-1.5 uppercase tracking-wide transition-colors duration-300">
+                        Contact
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-50 group-hover/nav:opacity-100 transition-opacity duration-300">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </a>
+
+                    <div class="absolute top-[100%] right-0 w-max bg-white border border-slate-200 border-t-0 rounded-b-xl shadow-xl opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 z-50">
+                        <div class="flex p-8 gap-8">
+                            <div class="w-[220px] flex flex-col">
+                                <h3 class="text-[11px] font-bold text-slate-400 tracking-[0.15em] uppercase mb-5 h-4">Join GEN</h3>
+                                <div class="flex flex-col gap-6">
+                                    <a href="#" class="group/item block">
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">NIP</h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">National Internship Program</p>
+                                    </a>
+                                    <a href="#" class="group/item block">
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">WAP</h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">Youth Embassador Program</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Search Button -->
                 <button class="text-corporate-primary hover:text-corporate-accent transition-colors duration-300 ml-4">
