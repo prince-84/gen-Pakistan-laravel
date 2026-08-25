@@ -15,3 +15,8 @@ Route::get('/managing-directors', [PageController::class, 'managingDirectors']);
 Route::get('/partners', [PageController::class, 'partners']);
 Route::get('/admin', [AdminController::class, 'dashboard']);
 Route::get('/admin/services', [AdminController::class, 'services']);
+Route::get('/admin/services/create', [AdminController::class, 'createService']);
+Route::post('/admin/services', [AdminController::class, 'storeService']);
+Route::get('/admin/services/{service}/edit', [AdminController::class, 'editService']);
+Route::put('/admin/services/{service}', [AdminController::class, 'updateService']);
+Route::delete('/admin/services/{service}', [AdminController::class, 'deleteService']);

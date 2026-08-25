@@ -19,9 +19,10 @@
             </p>
         </div>
 
-        <button class="bg-corporate-primary hover:bg-corporate-secondary text-white px-5 py-3 rounded-lg font-semibold transition-colors">
+        <a href="/admin/services/create" class="inline-flex items-center bg-corporate-primary hover:bg-corporate-secondary text-white px-5 py-3 rounded-lg font-semibold transition-colors"
+        >
             + Add Service
-        </button>
+        </a>
     </div>
 
     {{-- Services --}}
@@ -44,17 +45,22 @@
                     </div>
 
                     <div class="flex gap-2">
-
-                        <button class="px-4 py-2 text-sm font-semibold border border-slate-200 rounded-lg hover:bg-slate-50">
+                        <a href="/admin/services/{{ $service->id }}/edit"
+                        class="px-4 py-2 text-sm font-semibold border border-slate-200 rounded-lg hover:bg-slate-50">
                             Edit
-                        </button>
-
-                        <button class="px-4 py-2 text-sm font-semibold text-red-600 border border-red-200 rounded-lg hover:bg-red-50">
-                            Delete
-                        </button>
-
+                        </a>
+                        <form action="/admin/services/{{ $service->id }}" method="POST"
+                            onsubmit="return confirm('Are you sure you want to delete this service?');">
+                            @csrf
+                            @method('DELETE')
+                            <button
+                                type="submit"
+                                class="px-4 py-2 text-sm font-semibold text-red-600 border border-red-200 rounded-lg hover:bg-red-50">
+                                Delete
+                            </button>
+                        </form>
                     </div>
-
+                
                 </div>
 
             @empty
