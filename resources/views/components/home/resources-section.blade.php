@@ -52,169 +52,64 @@
         {{-- Resource Cards --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {{-- Resource 1 --}}
-            <div class="resource-card-anim group bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100 will-change-transform hover:shadow-2xl hover:shadow-slate-200 hover:-translate-y-2 transition-shadow duration-500">
+            @forelse ($resources as $resource)
+                <div class="resource-card-anim group bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100 will-change-transform hover:shadow-2xl hover:shadow-slate-200 hover:-translate-y-2 transition-shadow duration-500">
 
-                <div class="relative h-64 w-full overflow-hidden">
+                    <div class="relative h-64 w-full overflow-hidden">
 
-                    <img
-                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
-                        alt="Global Enterprise Frameworks"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    >
+                        <img
+                            src="{{ $resource->image }}"
+                            alt="{{ $resource->title }}"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        >
 
-                    <div class="absolute top-6 left-6">
-                        <span class="bg-white/90 backdrop-blur-md text-corporate-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
-                            Framework
-                        </span>
+                        <div class="absolute top-6 left-6">
+                            <span class="bg-white/90 backdrop-blur-md text-corporate-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
+                                {{ $resource->category }}
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="p-8">
+
+                        <h4 class="text-xl font-extrabold text-corporate-primary mb-4 leading-tight group-hover:text-corporate-accent transition-colors duration-300">
+                            {{ $resource->title }}
+                        </h4>
+
+                        <p class="text-slate-500 leading-relaxed mb-8 font-medium">
+                            {{ $resource->description }}
+                        </p>
+
+                        <a href="{{ $resource->button_url }}"
+                           class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-corporate-primary hover:text-corporate-accent transition-colors duration-300">
+
+                            {{ $resource->button_text }}
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 width="14"
+                                 height="14"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="3"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+
+                                <path d="M5 12h14m-7-7 7 7-7 7" />
+
+                            </svg>
+
+                        </a>
+
                     </div>
 
                 </div>
-
-                <div class="p-8">
-
-                    <h4 class="text-xl font-extrabold text-corporate-primary mb-4 leading-tight group-hover:text-corporate-accent transition-colors duration-300">
-                        Global Enterprise Frameworks
-                    </h4>
-
-                    <p class="text-slate-500 leading-relaxed mb-8 font-medium">
-                        Comprehensive methodologies for scaling international operations and securing foreign investments in emerging markets.
-                    </p>
-
-                    <a href="#"
-                       class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-corporate-primary hover:text-corporate-accent transition-colors duration-300">
-
-                        Download Briefing
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             width="14"
-                             height="14"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="3"
-                             stroke-linecap="round"
-                             stroke-linejoin="round">
-
-                            <path d="M5 12h14m-7-7 7 7-7 7" />
-
-                        </svg>
-
-                    </a>
-
+            @empty
+                <div class="col-span-full text-center text-slate-500 py-8">
+                    No resources available at the moment.
                 </div>
-
-            </div>
-
-
-            {{-- Resource 2 --}}
-            <div class="resource-card-anim group bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100 will-change-transform hover:shadow-2xl hover:shadow-slate-200 hover:-translate-y-2 transition-shadow duration-500">
-
-                <div class="relative h-64 w-full overflow-hidden">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop"
-                        alt="Corporate Innovation Guidelines"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    >
-
-                    <div class="absolute top-6 left-6">
-                        <span class="bg-white/90 backdrop-blur-md text-corporate-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
-                            Innovation
-                        </span>
-                    </div>
-
-                </div>
-
-                <div class="p-8">
-
-                    <h4 class="text-xl font-extrabold text-corporate-primary mb-4 leading-tight group-hover:text-corporate-accent transition-colors duration-300">
-                        Corporate Innovation Guidelines
-                    </h4>
-
-                    <p class="text-slate-500 leading-relaxed mb-8 font-medium">
-                        Strategic playbooks for fostering internal innovation, R&amp;D excellence, and technology transfer in agile environments.
-                    </p>
-
-                    <a href="#"
-                       class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-corporate-primary hover:text-corporate-accent transition-colors duration-300">
-
-                        Download Briefing
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             width="14"
-                             height="14"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="3"
-                             stroke-linecap="round"
-                             stroke-linejoin="round">
-
-                            <path d="M5 12h14m-7-7 7 7-7 7" />
-
-                        </svg>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            {{-- Resource 3 --}}
-            <div class="resource-card-anim group bg-slate-50 rounded-[2rem] overflow-hidden border border-slate-100 will-change-transform hover:shadow-2xl hover:shadow-slate-200 hover:-translate-y-2 transition-shadow duration-500">
-
-                <div class="relative h-64 w-full overflow-hidden">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1579711869674-0581d1bd1f6c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEV4ZWN1dGl2ZSUyMHBvbGljeXxlbnwwfHwwfHx8MA%3D%3D"
-                        alt="Executive Policy Insights 2026"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    >
-
-                    <div class="absolute top-6 left-6">
-                        <span class="bg-white/90 backdrop-blur-md text-corporate-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
-                            Insights
-                        </span>
-                    </div>
-
-                </div>
-
-                <div class="p-8">
-
-                    <h4 class="text-xl font-extrabold text-corporate-primary mb-4 leading-tight group-hover:text-corporate-accent transition-colors duration-300">
-                        Executive Policy Insights 2026
-                    </h4>
-
-                    <p class="text-slate-500 leading-relaxed mb-8 font-medium">
-                        In-depth analysis of emerging digital ecosystems, AI governance, and global compliance for C-suite leaders.
-                    </p>
-
-                    <a href="#"
-                       class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-corporate-primary hover:text-corporate-accent transition-colors duration-300">
-
-                        Download Briefing
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             width="14"
-                             height="14"
-                             viewBox="0 0 24 24"
-                             fill="none"
-                             stroke="currentColor"
-                             stroke-width="3"
-                             stroke-linecap="round"
-                             stroke-linejoin="round">
-
-                            <path d="M5 12h14m-7-7 7 7-7 7" />
-
-                        </svg>
-
-                    </a>
-
-                </div>
-
-            </div>
+            @endforelse
 
         </div>
 
@@ -253,4 +148,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 </script>
-

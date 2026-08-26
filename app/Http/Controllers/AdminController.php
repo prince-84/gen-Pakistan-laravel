@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\HomepageBanner;
 use App\Models\HomepageAction;
+use App\Models\HomepageResource;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -63,6 +64,7 @@ class AdminController extends Controller
         $service->delete();
         return redirect('/admin/services');
     }
+
     public function editBanner()
     {
         $banner = HomepageBanner::first();
@@ -82,6 +84,7 @@ class AdminController extends Controller
 
         return redirect('/admin/banner');
     }
+
     public function editAction()
     {
         $action = HomepageAction::first();
@@ -107,5 +110,59 @@ class AdminController extends Controller
         ]);
 
         return redirect('/admin/action');
+    }
+
+    public function resources()
+    {
+        $resources = HomepageResource::orderBy('sort_order')->get();
+
+        return view('admin.resources.index', compact('resources'));
+    }
+
+    public function createResource()
+    {
+        return view('admin.resources.create');
+    }
+
+    public function storeResource(Request $request)
+    {
+        HomepageResource::create([
+            'category' => $request->category,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $request->image,
+            'button_text' => $request->button_text,
+            'button_url' => $request->button_url,
+            'sort_order' => (HomepageResource::max('sort_order') ?? 0) + 1,
+            'is_active' => true,
+        ]);
+
+        return redirect('/admin/resources');
+    }
+
+    public function editResource(HomepageResource $resource)
+    {
+        return view('admin.resources.edit', compact('resource'));
+    }
+
+    public function updateResource(Request $request, HomepageResource $resource)
+    {
+        $resource->update([
+            'category' => $request->category,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $request->image,
+            'button_text' => $request->button_text,
+            'button_url' => $request->button_url,
+        ]);
+
+        return redirect('/admin/resources');
+    }
+
+    public function deleteResource(HomepageResource $resource)
+    {
+        $resource->delete();
+
+        return redirect('/admin/resources');
     }
 }
