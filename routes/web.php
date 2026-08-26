@@ -20,3 +20,5 @@ Route::post('/admin/services', [AdminController::class, 'storeService']);
 Route::get('/admin/services/{service}/edit', [AdminController::class, 'editService']);
 Route::put('/admin/services/{service}', [AdminController::class, 'updateService']);
 Route::delete('/admin/services/{service}', [AdminController::class, 'deleteService']);
+Route::get('/admin/banner', [AdminController::class, 'editBanner']);
+Route::put('/admin/banner', [AdminController::class, 'updateBanner']);

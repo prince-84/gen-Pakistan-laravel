@@ -18,18 +18,18 @@
                 <div class="h-0.5 w-12 bg-corporate-accent rounded-full"></div>
 
                 <span class="text-sm font-black tracking-[0.2em] text-corporate-accent uppercase">
-                    Accelerate Growth
+                    {{ $banner->label }}
                 </span>
             </div>
 
             {{-- Heading --}}
             <h3 class="banner-content-anim text-4xl md:text-5xl lg:text-[42px] font-semibold text-white tracking-tight leading-[1.2] mb-8">
-                Join the Global Network of Forward-Thinking Enterprise Leaders
+                {{ $banner->heading }}
             </h3>
 
             {{-- Description --}}
             <p class="banner-content-anim text-slate-300 text-lg leading-relaxed mb-10 max-w-2xl font-medium">
-                Unlock exclusive access to strategic resources, high-level networking, and global market expansion opportunities. We empower visionary businesses to scale globally.
+                {{ $banner->description }}
             </p>
 
             {{-- Buttons --}}

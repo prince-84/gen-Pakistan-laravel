@@ -67,20 +67,6 @@
                     </p>
                 </div>
 
-                <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-2">
-                        Sort Order
-                    </label>
-
-                    <input
-                        type="number"
-                        name="sort_order"
-                        value="0"
-                        min="0"
-                        class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-corporate-primary focus:ring-corporate-primary"
-                    >
-                </div>
-
                 <div class="flex items-center gap-3 pt-2">
 
                     <button
