@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\HomepageAction;
 use App\Models\HomepageBanner;
 
 class HomeController extends Controller
@@ -14,7 +15,8 @@ class HomeController extends Controller
             ->get();
 
         $banner = HomepageBanner::first();
+        $action = HomepageAction::first();
 
-        return view('home', compact('services', 'banner'));
+        return view('home', compact('services', 'banner', 'action'));
     }
 }

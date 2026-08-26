@@ -22,3 +22,5 @@ Route::put('/admin/services/{service}', [AdminController::class, 'updateService'
 Route::delete('/admin/services/{service}', [AdminController::class, 'deleteService']);
 Route::get('/admin/banner', [AdminController::class, 'editBanner']);
 Route::put('/admin/banner', [AdminController::class, 'updateBanner']);
+Route::get('/admin/action', [AdminController::class, 'editAction']);
+Route::put('/admin/action', [AdminController::class, 'updateAction']);

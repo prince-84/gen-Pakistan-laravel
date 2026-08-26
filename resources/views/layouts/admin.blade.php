@@ -49,7 +49,7 @@
                     Banner
                 </a>
 
-                <a href="#"
+                <a href="/admin/action"
                    class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
                     Action
                 </a>

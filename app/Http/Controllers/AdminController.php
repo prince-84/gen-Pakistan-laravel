@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use App\Models\HomepageBanner;
+use App\Models\HomepageAction;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -80,5 +81,31 @@ class AdminController extends Controller
         ]);
 
         return redirect('/admin/banner');
+    }
+    public function editAction()
+    {
+        $action = HomepageAction::first();
+
+        return view('admin.action.edit', compact('action'));
+    }
+
+    public function updateAction(Request $request)
+    {
+        $action = HomepageAction::first();
+
+        $action->update([
+            'label' => $request->label,
+            'heading' => $request->heading,
+            'description' => $request->description,
+            'primary_button_text' => $request->primary_button_text,
+            'primary_button_url' => $request->primary_button_url,
+            'secondary_button_text' => $request->secondary_button_text,
+            'secondary_button_url' => $request->secondary_button_url,
+            'quote' => $request->quote,
+            'author_name' => $request->author_name,
+            'author_role' => $request->author_role,
+        ]);
+
+        return redirect('/admin/action');
     }
 }

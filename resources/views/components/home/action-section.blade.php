@@ -8,7 +8,7 @@
                 <div class="flex items-center gap-3 mb-4">
                     <div class="h-0.5 w-10 bg-corporate-accent rounded-full"></div>
                     <span class="text-sm font-black tracking-[0.2em] text-corporate-accent uppercase">
-                        Global Situations
+                        {{ $action->label }}
                     </span>
                 </div>
 
@@ -18,17 +18,23 @@
             </div>
 
             <p class="text-slate-600 leading-relaxed mb-10">
-                Partnering with forward-thinking enterprises to drive economic growth and expand strategic global influence. Join our network of top-tier executives and founders to shape the future of enterprise innovation.
+                {{ $action->description }}
             </p>
 
             <div class="flex flex-col sm:flex-row gap-5">
-                <button class="bg-corporate-primary hover:bg-corporate-secondary text-white px-8 py-4 rounded-xl font-bold tracking-wide shadow-lg shadow-corporate-primary/20 hover:-translate-y-1 transition-all duration-300">
-                    Initiate Partnership
-                </button>
+                <a
+                    href="{{ $action->primary_button_url }}"
+                    class="bg-corporate-primary hover:bg-corporate-secondary text-white px-8 py-4 rounded-xl font-bold tracking-wide shadow-lg shadow-corporate-primary/20 hover:-translate-y-1 transition-all duration-300"
+                >
+                    {{ $action->primary_button_text }}
+                </a>
 
-                <button class="bg-white hover:bg-slate-50 text-corporate-primary border border-slate-200 px-8 py-4 rounded-xl font-bold tracking-wide shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                    Corporate Access
-                </button>
+                <a
+                    href="{{ $action->secondary_button_url }}"
+                    class="bg-white hover:bg-slate-50 text-corporate-primary border border-slate-200 px-8 py-4 rounded-xl font-bold tracking-wide shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                >
+                    {{ $action->secondary_button_text }}
+                </a>
             </div>
         </div>
 
@@ -46,13 +52,13 @@
                 </div>
 
                 <p class="mb-8 text-slate-700 italic text-lg leading-relaxed relative z-10 font-medium tracking-wide">
-                    "In the modern economic landscape, enterprise agility and bold strategic partnerships are the true drivers of sustainable global success."
+                    "{{ $action->quote }}"
                 </p>
 
                 <div class="flex items-center gap-4 relative z-10">
                     <div class="relative w-14 h-14 rounded-full overflow-hidden shadow-md border-2 border-white">
                         <img
-                            src="/images/author.png"
+                            src="{{ asset($action->author_image) }}"
                             alt="Industry Leader"
                             class="w-full h-full object-cover"
                         />
@@ -60,11 +66,11 @@
 
                     <div>
                         <div class="text-base font-extrabold text-corporate-primary">
-                            Executive Board
+                            {{ $action->author_name }}
                         </div>
 
                         <div class="text-xs uppercase font-bold text-corporate-accent tracking-widest mt-1">
-                            Global Strategy Group
+                            {{ $action->author_role }}
                         </div>
                     </div>
                 </div>
