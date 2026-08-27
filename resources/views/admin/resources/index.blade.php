@@ -38,10 +38,10 @@
 
                         <div class="min-w-0">
                             <div class="flex items-center gap-2 mb-1 flex-wrap">
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+                                <span class="text-xs font-semibold px-4 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
                                     {{ $resource->category }}
                                 </span>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full border {{ $resource->is_active ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-amber-50 text-amber-700 border-amber-200' }}">
+                                <span class="text-xs font-semibold px-4 py-1 rounded-full border {{ $resource->is_active ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-amber-50 text-amber-700 border-amber-200' }}">
                                     {{ $resource->is_active ? 'Active' : 'Inactive' }}
                                 </span>
                                 <span class="text-xs text-slate-400">

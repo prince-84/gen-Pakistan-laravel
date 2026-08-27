@@ -54,12 +54,12 @@
                     Action
                 </a>
 
-                <a href="#"
+                <a href="/admin/resources"
                    class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
                     Resources
                 </a>
 
-                <a href="#"
+                <a href="/admin/news"
                    class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
                     News
                 </a>

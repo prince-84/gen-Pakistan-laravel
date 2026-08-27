@@ -6,6 +6,7 @@ use App\Models\Service;
 use App\Models\HomepageAction;
 use App\Models\HomepageBanner;
 use App\Models\HomepageResource;
+use App\Models\HomepageNews;
 
 class HomeController extends Controller
 {
@@ -20,7 +21,23 @@ class HomeController extends Controller
         $resources = HomepageResource::where('is_active', true)
             ->orderBy('sort_order')
             ->get();
+        
+        $featuredNews = HomepageNews::where('is_active', true)
+            ->where('is_featured', true)
+            ->first();
 
-        return view('home', compact('services', 'banner', 'action', 'resources'));
+        $headlineNews = HomepageNews::where('is_active', true)
+            ->where('is_featured', false)
+            ->orderBy('sort_order')
+            ->get();
+
+        return view('home', compact(
+            'services',
+            'banner',
+            'action',
+            'resources',
+            'featuredNews',
+            'headlineNews'
+        ));
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Service;
 use App\Models\HomepageBanner;
 use App\Models\HomepageAction;
 use App\Models\HomepageResource;
+use App\Models\HomepageNews;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -164,5 +165,74 @@ class AdminController extends Controller
         $resource->delete();
 
         return redirect('/admin/resources');
+    }
+    
+    public function news()
+    {
+        $news = HomepageNews::orderBy('sort_order')->get();
+
+        return view('admin.news.index', compact('news'));
+    }
+
+    public function createNews()
+    {
+        return view('admin.news.create');
+    }
+
+    public function storeNews(Request $request)
+    {
+        HomepageNews::create([
+            'category' => $request->category,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $request->image,
+            'published_at' => $request->published_at,
+            'is_featured' => false,
+            'button_url' => $request->button_url,
+            'sort_order' => (HomepageNews::max('sort_order') ?? 0) + 1,
+            'is_active' => $request->boolean('is_active'),
+        ]);
+
+        return redirect('/admin/news');
+    }
+
+    public function editNews(HomepageNews $news)
+    {
+        return view('admin.news.edit', compact('news'));
+    }
+
+    public function updateNews(Request $request, HomepageNews $news)
+    {
+        $news->update([
+            'category' => $request->category,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $request->image,
+            'published_at' => $request->published_at,
+            'is_featured' => $news->is_featured,
+            'is_active' => $request->boolean('is_active'),
+            'button_url' => $request->button_url,
+        ]);
+
+        return redirect('/admin/news');
+    }
+
+    public function setFeaturedNews(HomepageNews $news)
+    {
+        HomepageNews::where('is_featured', true)
+            ->update(['is_featured' => false]);
+
+        $news->update([
+            'is_featured' => true,
+        ]);
+
+        return redirect('/admin/news');
+    }
+
+    public function deleteNews(HomepageNews $news)
+    {
+        $news->delete();
+
+        return redirect('/admin/news');
     }
 }

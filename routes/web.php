@@ -34,3 +34,11 @@ Route::post('/admin/resources', [AdminController::class, 'storeResource']);
 Route::get('/admin/resources/{resource}/edit', [AdminController::class, 'editResource']);
 Route::put('/admin/resources/{resource}', [AdminController::class, 'updateResource']);
 Route::delete('/admin/resources/{resource}', [AdminController::class, 'deleteResource']);
+
+Route::get('/admin/news', [AdminController::class, 'news']);
+Route::get('/admin/news/create', [AdminController::class, 'createNews']);
+Route::post('/admin/news', [AdminController::class, 'storeNews']);
+Route::get('/admin/news/{news}/edit', [AdminController::class, 'editNews']);
+Route::put('/admin/news/{news}', [AdminController::class, 'updateNews']);
+Route::delete('/admin/news/{news}', [AdminController::class, 'deleteNews']);
+Route::put('/admin/news/{news}/featured', [AdminController::class, 'setFeaturedNews']);

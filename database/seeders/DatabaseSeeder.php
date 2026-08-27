@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             HomepageBannerSeeder::class,
             HomepageActionSeeder::class,
             HomepageResourceSeeder::class,
+            HomepageNewsSeeder::class,
         ]);
 
         User::factory()->create([
