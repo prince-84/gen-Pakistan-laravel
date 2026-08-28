@@ -6,36 +6,47 @@ class PageController extends Controller
 {
     public function about()
     {
-        return view('pages.about');
+        return view('pages.about.about');
     }
 
-    public function boardStaff()
+    public function topLeadership()
     {
-        return view('pages.board-staff');
+        return view('pages.about.top-leadership');
+    }
+
+    public function regionalLeadership()
+    {
+        return view('pages.about.regional-leadership');
     }
 
     public function compassAwards()
     {
-        return view('pages.compass-awards');
+        return view('pages.about.compass-awards');
     }
 
     public function contact()
     {
-        return view('pages.contact');
+        return view('pages.about.contact');
     }
 
     public function globalLeaders()
     {
-        return view('pages.global-leaders');
-    }
-
-    public function managingDirectors()
-    {
-        return view('pages.managing-directors');
+        return view('pages.about.global-leaders');
     }
 
     public function partners()
     {
-        return view('pages.partners');
+        return view('pages.about.partners');
     }
+
+    public function nationalInternshipProgram()
+    {
+        return view('pages.about.national-internship-program');
+    }   
+
+    public function youthAmbassadorProgram()
+    {
+        return view('pages.about.youth-ambassador-program');
+    }
+
 }

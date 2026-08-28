@@ -15,6 +15,7 @@
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-8">
                 <!-- About Menu -->
+            
                 <div class="relative group/nav py-6 -my-6">
                     <a href="#" class="text-sm font-semibold text-slate-600 group-hover/nav:text-corporate-accent flex items-center gap-1.5 uppercase tracking-wide transition-colors duration-300">
                         About
@@ -25,64 +26,115 @@
 
                     <div class="absolute top-[100%] left-1/2 -translate-x-[30%] w-max bg-white border border-slate-200 border-t-0 rounded-b-xl shadow-xl opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 z-50">
                         <div class="flex p-8 gap-8">
+
                             <!-- GLOBAL -->
                             <div class="w-[220px] flex flex-col">
-                                <h3 class="text-[11px] font-bold text-slate-400 tracking-[0.15em] uppercase mb-5 h-4">GLOBAL</h3>
+                                <h3 class="text-[11px] font-bold text-slate-400 tracking-[0.15em] uppercase mb-5 h-4">
+                                    GLOBAL
+                                </h3>
+
                                 <div class="flex flex-col gap-6">
+
                                     <a href="/about" class="group/item block">
-                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">About GEN</h4>
-                                        <p class="text-[13px] text-slate-500 leading-relaxed">Operating in 200 countries to make it easier for anyone to start and scale.</p>
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            About GEN
+                                        </h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            Operating in 200 countries to make it easier for anyone to start and scale.
+                                        </p>
                                     </a>
-                                    <a href="/board-staff" class="group/item block">
-                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">Board + Staff</h4>
-                                        <p class="text-[13px] text-slate-500 leading-relaxed">Leading the strategic direction and daily execution of the GEN mission.</p>
-                                    </a>
+
                                     <a href="/partners" class="group/item block">
-                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">Our Partners</h4>
-                                        <p class="text-[13px] text-slate-500 leading-relaxed">A range of organizations contributing expertise, experience and energy.</p>
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            Our Partners
+                                        </h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            A range of organizations contributing expertise, experience and energy.
+                                        </p>
                                     </a>
                                 </div>
                             </div>
+
 
                             <!-- NATIONAL LEADERSHIP -->
                             <div class="w-[220px] flex flex-col">
-                                <h3 class="text-[11px] font-bold text-slate-400 tracking-[0.15em] uppercase mb-5 h-4">NATIONAL LEADERSHIP</h3>
+                                <h3 class="text-[11px] font-bold text-slate-400 tracking-[0.15em] uppercase mb-5 h-4">
+                                    NATIONAL LEADERSHIP
+                                </h3>
+
                                 <div class="flex flex-col gap-6">
-                                    <a href="/managing-directors" class="group/item block">
-                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">Managing Directors</h4>
-                                        <p class="text-[13px] text-slate-500 leading-relaxed">Individuals leading GEN chapters and all aspects of national engagement.</p>
+
+                                    <a href="/top-leadership" class="group/item block">
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            Top Leadership
+                                        </h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            Meet the leaders guiding GEN Pakistan's strategic direction and growth.
+                                        </p>
                                     </a>
-                                    <a href="/global-leaders" class="group/item block">
-                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">Global Leaders</h4>
-                                        <p class="text-[13px] text-slate-500 leading-relaxed">Individuals contributing to national engagement in GEN programs.</p>
+
+                                    <a href="/regional-leadership" class="group/item block">
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            Regional Leadership
+                                        </h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            Meet the leaders supporting regional engagement and entrepreneurship initiatives.
+                                        </p>
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- COMPASS AWARDS -->
+
+                            <!-- FLAGSHIP PROGRAM -->
                             <div class="w-[220px] flex flex-col">
-                                <div class="h-4 mb-5"></div>
+                                <h3 class="text-[11px] font-bold text-slate-400 tracking-[0.15em] uppercase mb-5 h-4">
+                                    FLAGSHIP PROGRAM
+                                </h3>
+
                                 <div class="flex flex-col gap-6">
-                                    <a href="/compass-awards" class="group/item block">
-                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">Compass Awards</h4>
-                                        <p class="text-[13px] text-slate-500 leading-relaxed">Celebrating excellence and honoring those making a difference.</p>
+
+                                    <a href="/national-internship-program" class="group/item block">
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            National Internship Program (NIP)
+                                        </h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            National internship opportunities designed to engage and develop emerging talent.
+                                        </p>
+                                    </a>
+
+                                    <a href="/youth-ambassador-program" class="group/item block">
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            Youth Ambassador Program (YAP)
+                                        </h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            Empowering young ambassadors to contribute to the GEN entrepreneurship ecosystem.
+                                        </p>
                                     </a>
                                 </div>
                             </div>
+
 
                             <!-- CONTACT -->
                             <div class="w-[220px] flex flex-col">
                                 <div class="h-4 mb-5"></div>
+
                                 <div class="flex flex-col gap-6">
+
                                     <a href="/contact" class="group/item block">
-                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">Contact GEN</h4>
-                                        <p class="text-[13px] text-slate-500 leading-relaxed">Reach out to our team with any questions.</p>
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            Contact GEN
+                                        </h4>
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            Reach out to our team with any questions.
+                                        </p>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
 
                 <!-- Our Work Menu -->
                 <div class="relative group/nav py-6 -my-6">
