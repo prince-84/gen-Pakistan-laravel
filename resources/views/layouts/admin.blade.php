@@ -1,3 +1,42 @@
+@php
+    $sidebarSections = [
+        [
+            'name' => 'Homepage',
+            'items' => [
+                ['label' => 'Services', 'href' => '/admin/services'],
+                ['label' => 'Banner', 'href' => '/admin/banner'],
+                ['label' => 'Action', 'href' => '/admin/action'],
+                ['label' => 'Resources', 'href' => '/admin/resources'],
+                ['label' => 'News', 'href' => '/admin/news'],
+            ],
+        ],
+        [
+            'name' => 'About',
+            'items' => [
+                ['label' => 'About GEN', 'href' => '#'],
+                ['label' => 'Our Partners', 'href' => '#'],
+                ['label' => 'Contact GEN', 'href' => '#'],
+            ],
+        ],
+        [
+            'name' => 'Our Work',
+            'items' => [],
+        ],
+        [
+            'name' => 'Resources',
+            'items' => [],
+        ],
+        [
+            'name' => 'Events',
+            'items' => [],
+        ],
+        [
+            'name' => 'News',
+            'items' => [],
+        ],
+    ];
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +53,12 @@
     <div class="min-h-screen flex">
 
         <!-- Sidebar -->
-        <aside class="w-64 bg-corporate-primary text-white flex-shrink-0">
+        <aside class="w-64 bg-corporate-primary text-white flex-shrink-0 h-screen sticky top-0">
 
-            <div class="p-6 border-b border-white/10">
+            <!-- CMS Brand / Dashboard Link -->
+            <a href="/admin"
+            class="block p-6 border-b border-white/10 hover:bg-white/5 transition-colors">
+
                 <h1 class="text-xl font-bold">
                     GEN Pakistan
                 </h1>
@@ -24,51 +66,56 @@
                 <p class="text-xs text-white/60 mt-1 uppercase tracking-wider">
                     Content Management
                 </p>
-            </div>
 
-            <nav class="p-4 space-y-1">
+            </a>
 
-                <a href="/admin"
-                   class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
-                    Dashboard
-                </a>
 
-                <div class="pt-4 pb-2 px-4">
-                    <span class="text-xs font-bold uppercase tracking-wider text-white/50">
-                        Website Content
-                    </span>
-                </div>
+            <!-- Sidebar Navigation -->
+            <nav class="p-4 overflow-y-auto h-[calc(100vh-97px)] sidebar-scroll">
+                @foreach ($sidebarSections as $section)
 
-                <a href="/admin/services"
-                    class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
-                    Services
-                </a>
+                    <div class="sidebar-section mt-1">
 
-                <a href="/admin/banner"
-                   class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
-                    Banner
-                </a>
+                        <button
+                            type="button"
+                            class="sidebar-accordion w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-white/10 transition-colors text-left"
+                        >
+                            <span class="text-lg font-bold">
+                                {{ $section['name'] }}
+                            </span>
 
-                <a href="/admin/action"
-                   class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
-                    Action
-                </a>
+                            <svg
+                                class="sidebar-chevron w-4 h-4 transition-transform duration-200"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
 
-                <a href="/admin/resources"
-                   class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
-                    Resources
-                </a>
+                        <div class="sidebar-accordion-content ml-3 mt-1 space-y-4 hidden">
 
-                <a href="/admin/news"
-                   class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
-                    News
-                </a>
+                            @foreach ($section['items'] as $item)
 
-                <a href="#"
-                   class="block px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">
-                    Supporters
-                </a>
+                                <a
+                                    href="{{ $item['href'] }}"
+                                    class="block px-4 py-2.5 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors text-base font-semibold"
+                                >
+                                    {{ $item['label'] }}
+                                </a>
 
+                            @endforeach
+
+                        </div>
+
+                    </div>
+
+                @endforeach
             </nav>
 
         </aside>
@@ -89,6 +136,43 @@
         </main>
 
     </div>
+
+        <style>
+            .sidebar-scroll {
+                scrollbar-width: none;
+            }
+
+            .sidebar-scroll::-webkit-scrollbar {
+                display: none;
+            }
+        </style>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const accordions = document.querySelectorAll('.sidebar-accordion');
+
+            accordions.forEach(function (accordion) {
+
+                accordion.addEventListener('click', function () {
+
+                    const content = accordion.nextElementSibling;
+                    const chevron = accordion.querySelector('.sidebar-chevron');
+
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        chevron.classList.add('rotate-180');
+                    } else {
+                        content.classList.add('hidden');
+                        chevron.classList.remove('rotate-180');
+                    }
+
+                });
+
+            });
+
+        });
+        </script>
 
 </body>
 </html>
