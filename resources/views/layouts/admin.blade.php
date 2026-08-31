@@ -13,8 +13,8 @@
         [
             'name' => 'About',
             'items' => [
-                ['label' => 'About GEN', 'href' => '#'],
-                ['label' => 'Our Partners', 'href' => '#'],
+                ['label' => 'About GEN', 'href' => '/admin/about'],
+                ['label' => 'Our Partners', 'href' => '/admin/partners'],
                 ['label' => 'Contact GEN', 'href' => '#'],
             ],
         ],

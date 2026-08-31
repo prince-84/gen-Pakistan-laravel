@@ -1,12 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\AboutPage;
+use App\Models\PartnersPage;
 
 class PageController extends Controller
 {
     public function about()
     {
-        return view('pages.about.about');
+        $about = AboutPage::first();
+
+        return view('pages.about.about', compact('about'));
     }
 
     public function topLeadership()
@@ -36,7 +40,9 @@ class PageController extends Controller
 
     public function partners()
     {
-        return view('pages.about.partners');
+        $partners = PartnersPage::first();
+
+        return view('pages.about.partners', compact('partners'));
     }
 
     public function nationalInternshipProgram()

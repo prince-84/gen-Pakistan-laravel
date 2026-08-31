@@ -45,3 +45,9 @@ Route::get('/admin/news/{news}/edit', [AdminController::class, 'editNews']);
 Route::put('/admin/news/{news}', [AdminController::class, 'updateNews']);
 Route::delete('/admin/news/{news}', [AdminController::class, 'deleteNews']);
 Route::put('/admin/news/{news}/featured', [AdminController::class, 'setFeaturedNews']);
+
+Route::get('/admin/about', [AdminController::class, 'editAbout']);
+Route::put('/admin/about', [AdminController::class, 'updateAbout']);
+
+Route::get('/admin/partners', [AdminController::class, 'editPartners']);
+Route::put('/admin/partners', [AdminController::class, 'updatePartners']);

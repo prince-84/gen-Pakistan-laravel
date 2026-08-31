@@ -7,6 +7,8 @@ use App\Models\HomepageBanner;
 use App\Models\HomepageAction;
 use App\Models\HomepageResource;
 use App\Models\HomepageNews;
+use App\Models\AboutPage;
+use App\Models\PartnersPage;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -234,5 +236,67 @@ class AdminController extends Controller
         $news->delete();
 
         return redirect('/admin/news');
+    }
+
+        public function editAbout()
+    {
+        $about = AboutPage::first();
+
+        return view('admin.about.edit', compact('about'));
+    }
+
+    public function updateAbout(Request $request)
+    {
+        $about = AboutPage::first();
+
+        $about->update([
+            'page_heading' => $request->page_heading,
+            'video_title' => $request->video_title,
+            'video_url' => $request->video_url,
+            'article_heading' => $request->article_heading,
+            'article_content' => $request->article_content,
+            'core_pillars' => $request->core_pillars,
+            'impact_heading' => $request->impact_heading,
+            'impact_items' => $request->impact_items,
+        ]);
+
+        return redirect('/admin/about');
+    }
+
+    public function editPartners()
+    {
+        $partners = PartnersPage::first();
+
+        return view('admin.partners.edit', compact('partners'));
+    }
+
+    public function updatePartners(Request $request)
+    {
+        $partners = PartnersPage::first();
+
+        $cleanPartners = function ($partners) {
+            return collect($partners ?? [])
+                ->map(fn ($partner) => trim($partner))
+                ->filter()
+                ->values()
+                ->all();
+        };
+
+        $partners->update([
+            'page_heading' => $request->page_heading,
+            'introduction' => $request->introduction,
+            'platinum_partners' => $cleanPartners($request->platinum_partners),
+            'silver_partners' => $cleanPartners($request->silver_partners),
+            'bronze_partners' => $cleanPartners($request->bronze_partners),
+            'ecosystem_partners' => $cleanPartners($request->ecosystem_partners),
+            'partnership_text' => $request->partnership_text,
+            'apply_url' => $request->apply_url,
+            'local_partnership_url' => $request->local_partnership_url,
+            'contact_text' => $request->contact_text,
+            'contact_person' => $request->contact_person,
+            'contact_email' => $request->contact_email,
+        ]);
+
+        return redirect('/admin/partners');
     }
 }

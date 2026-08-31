@@ -21,8 +21,9 @@ class DatabaseSeeder extends Seeder
             HomepageActionSeeder::class,
             HomepageResourceSeeder::class,
             HomepageNewsSeeder::class,
+            AboutPageSeeder::class,
+            PartnersPageSeeder::class,
         ]);
-
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
