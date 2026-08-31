@@ -9,6 +9,7 @@ use App\Models\HomepageResource;
 use App\Models\HomepageNews;
 use App\Models\AboutPage;
 use App\Models\PartnersPage;
+use App\Models\ContactPage;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -298,5 +299,33 @@ class AdminController extends Controller
         ]);
 
         return redirect('/admin/partners');
+    }
+
+    public function editContact()
+    {
+        $contact = ContactPage::first();
+
+        return view('admin.contact.edit', compact('contact'));
+    }
+
+    public function updateContact(Request $request)
+    {
+        $contact = ContactPage::first();
+
+        $validated = $request->validate([
+            'intro_paragraph_1' => ['required', 'string'],
+            'intro_paragraph_2' => ['required', 'string'],
+            'intro_paragraph_3' => ['required', 'string'],
+            'phone' => ['nullable', 'string', 'max:50'],
+            'quote' => ['required', 'string'],
+            'facebook_url' => ['nullable', 'url'],
+            'twitter_url' => ['nullable', 'url'],
+            'linkedin_url' => ['nullable', 'url'],
+            'instagram_url' => ['nullable', 'url'],
+        ]);
+
+        $contact->update($validated);
+
+        return redirect('/admin/contact');
     }
 }

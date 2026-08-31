@@ -65,4 +65,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/admin/account/email', [AccountController::class, 'updateEmail']);
     Route::put('/admin/account/password', [AccountController::class, 'updatePassword']);
 
+    Route::get('/admin/contact', [AdminController::class, 'editContact']);
+    Route::put('/admin/contact', [AdminController::class, 'updateContact']);
+
 });

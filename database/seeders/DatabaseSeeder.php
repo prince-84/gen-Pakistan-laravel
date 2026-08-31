@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             HomepageNewsSeeder::class,
             AboutPageSeeder::class,
             PartnersPageSeeder::class,
+            ContactPageSeeder::class,
         ]);
     }
 }

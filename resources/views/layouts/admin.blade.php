@@ -15,7 +15,7 @@
             'items' => [
                 ['label' => 'About GEN', 'href' => '/admin/about'],
                 ['label' => 'Our Partners', 'href' => '/admin/partners'],
-                ['label' => 'Contact GEN', 'href' => '#'],
+                ['label' => 'Contact GEN', 'href' => '/admin/contact'],
             ],
         ],
         [

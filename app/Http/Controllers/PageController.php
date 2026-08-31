@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\AboutPage;
 use App\Models\PartnersPage;
+use App\Models\ContactPage;
 
 class PageController extends Controller
 {
@@ -30,7 +31,9 @@ class PageController extends Controller
 
     public function contact()
     {
-        return view('pages.about.contact');
+        $contact = ContactPage::first();
+
+        return view('pages.about.contact', compact('contact'));
     }
 
     public function globalLeaders()
