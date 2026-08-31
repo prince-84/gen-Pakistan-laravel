@@ -123,11 +123,56 @@
         <!-- Main Content -->
         <main class="flex-1 min-w-0">
 
-            <header class="bg-white border-b border-slate-200 px-8 py-5">
-                <h2 class="text-xl font-bold text-corporate-primary">
-                    @yield('page-heading', 'Dashboard')
-                </h2>
-            </header>
+            <header class="bg-white border-b border-slate-200 px-8 py-4">
+            <div class="flex items-center justify-between gap-6">
+
+        {{-- Page Heading --}}
+        <h2 class="text-xl font-bold text-corporate-primary">
+            @yield('page-heading', 'Dashboard')
+        </h2>
+
+
+        {{-- Authenticated User --}}
+        @auth
+            <div class="flex items-center gap-4">
+
+                <div class="text-right">
+                    <p class="text-sm font-semibold text-slate-800">
+                        {{ auth()->user()->name }}
+                    </p>
+
+                    <p class="text-xs text-slate-500">
+                        {{ auth()->user()->email }}
+                    </p>
+                </div>
+
+
+                {{-- Account Settings --}}
+                <a
+                    href="/admin/account"
+                    class="px-4 py-2 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+                >
+                    Account Settings
+                </a>
+
+
+                {{-- Logout --}}
+                <form action="/admin/logout" method="POST">
+                    @csrf
+
+                    <button
+                        type="submit"
+                        class="px-4 py-2 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+                    >
+                        Log out
+                    </button>
+                </form>
+
+            </div>
+        @endauth
+
+    </div>
+</header>
 
             <div class="p-8">
                 @yield('content')
