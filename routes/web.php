@@ -6,6 +6,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactMessageController;
 
 Route::get('/', [HomeController::class, 'index']);
 
@@ -14,6 +16,7 @@ Route::get('/top-leadership', [PageController::class, 'topLeadership']);
 Route::get('/regional-leadership', [PageController::class, 'regionalLeadership']);
 Route::get('/compass-awards', [PageController::class, 'compassAwards']);
 Route::get('/contact', [PageController::class, 'contact']);
+Route::post('/contact', [ContactController::class, 'store']);
 Route::get('/global-leaders', [PageController::class, 'globalLeaders']);
 Route::get('/partners', [PageController::class, 'partners']);
 Route::get('/national-internship-program', [PageController::class, 'nationalInternshipProgram']);
@@ -67,5 +70,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/contact', [AdminController::class, 'editContact']);
     Route::put('/admin/contact', [AdminController::class, 'updateContact']);
+    Route::get('/admin/contact/messages', [ContactMessageController::class, 'index']);
+    Route::get('/admin/contact/messages/{message}', [ContactMessageController::class, 'show']);
+    Route::patch('/admin/contact/messages/{message}/read', [ContactMessageController::class, 'toggleRead']);
 
 });

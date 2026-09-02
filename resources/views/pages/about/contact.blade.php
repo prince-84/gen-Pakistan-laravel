@@ -12,150 +12,246 @@
             <div class="flex flex-col lg:flex-row gap-16 md:gap-24">
 
                 {{-- Left Column: Form --}}
-                <div class="w-full lg:w-[60%]">
+                {{-- Left Column: Form --}}
 
-                    <form class="space-y-8">
+<div class="w-full lg:w-[60%]">
 
-                        {{-- First Name --}}
-                        <div class="space-y-2">
-                            <label for="firstName" class="block text-sm font-bold text-slate-800">
-                                First Name <span class="text-red-600">*</span>
-                            </label>
+@if (session('success'))
+    <div
+        id="success-message"
+        class="mb-6 rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700 transition-opacity duration-500"
+    >
+        {{ session('success') }}
+    </div>
 
-                            <input
-                                type="text"
-                                id="firstName"
-                                name="firstName"
-                                required
-                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
-                            >
-                        </div>
+    <script>
+        setTimeout(function () {
+            const successMessage = document.getElementById('success-message');
 
-                        {{-- Last Name --}}
-                        <div class="space-y-2">
-                            <label for="lastName" class="block text-sm font-bold text-slate-800">
-                                Last Name <span class="text-red-600">*</span>
-                            </label>
+            if (successMessage) {
+                successMessage.classList.add('opacity-0');
 
-                            <input
-                                type="text"
-                                id="lastName"
-                                name="lastName"
-                                required
-                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
-                            >
-                        </div>
+                setTimeout(function () {
+                    successMessage.remove();
+                }, 500);
+            }
+        }, 5000);
+    </script>
+@endif
 
-                        {{-- Email --}}
-                        <div class="space-y-2">
-                            <label for="email" class="block text-sm font-bold text-slate-800">
-                                Your email address <span class="text-red-600">*</span>
-                            </label>
+<form action="/contact" method="POST" class="space-y-8">
+    @csrf
 
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
-                            >
-                        </div>
+    {{-- First Name --}}
+    <div class="space-y-2">
+        <label for="firstName" class="block text-sm font-bold text-slate-800">
+            First Name <span class="text-red-600">*</span>
+        </label>
 
-                        {{-- Subject --}}
-                        <div class="space-y-2">
-                            <label for="subject" class="block text-sm font-bold text-slate-800">
-                                Subject <span class="text-red-600">*</span>
-                            </label>
+        <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            value="{{ old('firstName') }}"
+            required
+            class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
+        >
 
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                required
-                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
-                            >
-                        </div>
+        @error('firstName')
+            <p class="text-sm text-red-600 mt-1">
+                {{ $message }}
+            </p>
+        @enderror
+    </div>
 
-                        {{-- Message --}}
-                        <div class="space-y-2">
-                            <label for="message" class="block text-sm font-bold text-slate-800">
-                                Message <span class="text-red-600">*</span>
-                            </label>
 
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                                rows="8"
-                                class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white resize-y"
-                            ></textarea>
-                        </div>
-                        {{-- CAPTCHA Placeholder --}}
-                        <div class="space-y-2">
-                            <label class="block text-sm font-bold text-slate-800 mb-4">
-                                CAPTCHA <span class="text-red-600">*</span>
-                            </label>
-                            <div class="w-full md:w-[300px] h-[70px] bg-slate-50 border border-slate-200 rounded flex items-center justify-between px-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="14"
-                                            height="14"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="white"
-                                            stroke-width="3"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                        >
-                                            <polyline points="20 6 9 17 4 12"></polyline>
-                                        </svg>
-                                    </div>
-                                    <span class="text-sm font-medium text-slate-700">
-                                        Success!
-                                    </span>
-                                </div>
-                                <div class="flex flex-col items-end">
-                                    <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">
-                                        CLOUDFLARE
-                                    </span>
-                                    <span class="text-[8px] text-slate-400">
-                                        Privacy - Terms
-                                    </span>
-                                </div>
-                            </div>
-                            <p class="text-[11px] text-slate-500 italic mt-3">
-                                This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.
-                            </p>
-                        </div>
-                        {{-- Action Buttons --}}
-                        <div class="flex flex-wrap gap-4 pt-4">
-                            <button
-                                type="submit"
-                                class="px-8 py-3 bg-[#E61C24] hover:bg-red-700 text-white font-bold text-sm rounded transition-colors shadow-sm"
-                            >
-                                Send message
-                            </button>
-                            <button
-                                type="button"
-                                class="px-8 py-3 bg-[#E61C24] hover:bg-red-700 text-white font-bold text-sm rounded transition-colors shadow-sm"
-                            >
-                                Preview
-                            </button>
-                        </div>
-                    </form>
-                    {{-- Support Text --}}
-                    <div class="mt-16 pt-8 border-t border-slate-100">
-                        <p class="text-[13px] text-slate-500">
-                            Having trouble with your account or need technical support?
+    {{-- Last Name --}}
+    <div class="space-y-2">
+        <label for="lastName" class="block text-sm font-bold text-slate-800">
+            Last Name <span class="text-red-600">*</span>
+        </label>
 
-                            <a href="#" class="text-corporate-accent hover:underline font-semibold">
-                                Open a new support ticket here.
-                            </a>
-                        </p>
-                    </div>
+        <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            value="{{ old('lastName') }}"
+            required
+            class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
+        >
+
+        @error('lastName')
+            <p class="text-sm text-red-600 mt-1">
+                {{ $message }}
+            </p>
+        @enderror
+    </div>
+
+
+    {{-- Email --}}
+    <div class="space-y-2">
+        <label for="email" class="block text-sm font-bold text-slate-800">
+            Your email address <span class="text-red-600">*</span>
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            value="{{ old('email') }}"
+            required
+            class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
+        >
+
+        @error('email')
+            <p class="text-sm text-red-600 mt-1">
+                {{ $message }}
+            </p>
+        @enderror
+    </div>
+
+
+    {{-- Subject --}}
+    <div class="space-y-2">
+        <label for="subject" class="block text-sm font-bold text-slate-800">
+            Subject <span class="text-red-600">*</span>
+        </label>
+
+        <input
+            type="text"
+            id="subject"
+            name="subject"
+            value="{{ old('subject') }}"
+            required
+            class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white"
+        >
+
+        @error('subject')
+            <p class="text-sm text-red-600 mt-1">
+                {{ $message }}
+            </p>
+        @enderror
+    </div>
+
+
+    {{-- Message --}}
+    <div class="space-y-2">
+        <label for="message" class="block text-sm font-bold text-slate-800">
+            Message <span class="text-red-600">*</span>
+        </label>
+
+        <textarea
+            id="message"
+            name="message"
+            required
+            rows="8"
+            class="w-full px-4 py-3 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate-accent/30 text-sm bg-white resize-y"
+        >{{ old('message') }}</textarea>
+
+        @error('message')
+            <p class="text-sm text-red-600 mt-1">
+                {{ $message }}
+            </p>
+        @enderror
+    </div>
+
+
+    {{-- CAPTCHA Placeholder --}}
+    <div class="space-y-2">
+
+        <label class="block text-sm font-bold text-slate-800 mb-4">
+            CAPTCHA <span class="text-red-600">*</span>
+        </label>
+
+        <div class="w-full md:w-[300px] h-[70px] bg-slate-50 border border-slate-200 rounded flex items-center justify-between px-4">
+
+            <div class="flex items-center gap-3">
+
+                <div class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
                 </div>
+
+                <span class="text-sm font-medium text-slate-700">
+                    Success!
+                </span>
+
+            </div>
+
+            <div class="flex flex-col items-end">
+
+                <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">
+                    CLOUDFLARE
+                </span>
+
+                <span class="text-[8px] text-slate-400">
+                    Privacy - Terms
+                </span>
+
+            </div>
+
+        </div>
+
+        <p class="text-[11px] text-slate-500 italic mt-3">
+            This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.
+        </p>
+
+    </div>
+
+
+    {{-- Action Buttons --}}
+    <div class="flex flex-wrap gap-4 pt-4">
+
+        <button
+            type="submit"
+            class="px-8 py-3 bg-[#E61C24] hover:bg-red-700 text-white font-bold text-sm rounded transition-colors shadow-sm"
+        >
+            Send message
+        </button>
+
+        <button
+            type="button"
+            class="px-8 py-3 bg-[#E61C24] hover:bg-red-700 text-white font-bold text-sm rounded transition-colors shadow-sm"
+        >
+            Preview
+        </button>
+
+    </div>
+
+</form>
+
+
+{{-- Support Text --}}
+<div class="mt-16 pt-8 border-t border-slate-100">
+
+    <p class="text-[13px] text-slate-500">
+
+        Having trouble with your account or need technical support?
+
+        <a
+            href="#"
+            class="text-corporate-accent hover:underline font-semibold"
+        >
+            Open a new support ticket here.
+        </a>
+
+    </p>
+
+</div>
+
+</div>
+
 
                 {{-- Right Column: Contact Information --}}
 
