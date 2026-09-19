@@ -93,24 +93,38 @@
     {{-- Options / Filters --}}
     <aside class="messages-options">
 
-        <div class="option-section">
+    <div class="option-section">
 
-            <button type="button" class="message-filter active">
-                <span>All Messages</span>
-                <span>{{ $messages->total() }}</span>
-            </button>
+        {{-- All Messages --}}
+        <a
+            href="/admin/contact/messages"
+            class="message-filter {{ $filter === null ? 'active' : '' }}"
+        >
+            <span>All Messages</span>
+            <span>{{ $totalCount }}</span>
+        </a>
 
-            <button type="button" class="message-filter">
-                <span>Unread</span>
-                <span>0</span>
-            </button>
 
-            <button type="button" class="message-filter">
-                <span>Starred</span>
-                <span>0</span>
-            </button>
+        {{-- Unread --}}
+        <a
+            href="/admin/contact/messages?filter=unread"
+            class="message-filter {{ $filter === 'unread' ? 'active' : '' }}"
+        >
+            <span>Unread</span>
+            <span>{{ $unreadCount }}</span>
+        </a>
 
-        </div>
+
+        {{-- Starred --}}
+        <a
+            href="/admin/contact/messages?filter=starred"
+            class="message-filter {{ $filter === 'starred' ? 'active' : '' }}"
+        >
+            <span>Starred</span>
+            <span>{{ $starredCount }}</span>
+        </a>
+
+    </div>
 
     </aside>
 
@@ -246,6 +260,9 @@
         gap: 12px;
     }
 
+    .message-filter {
+    text-decoration: none;
+    }
     
     /* Toolbar */
 
@@ -412,20 +429,6 @@
     .message-status {
         flex: 0 0 auto;
         padding-top: 6px;
-    }
-
-    .status-dot {
-        display: block;
-
-        width: 9px;
-        height: 9px;
-
-        border-radius: 50%;
-        background: #c9c9c9;
-    }
-
-    .status-dot.unread {
-        background: #e61c24;
     }
 
     .message-meta {
