@@ -4,13 +4,22 @@
 
 @section('content')
 
-<main class="min-h-screen bg-white pb-24">
+<main class="min-h-screen bg-white ">
 
-    {{-- Page Header --}}
+    {{-- Introductory Paragraph --}}
+    <section class="py-16 md:py-20 bg-slate-50 border-b border-slate-100">
+        <div class="container-custom max-w-6xl mx-auto text-center">
+            <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+                Global Entrepreneurship Network (GEN) Pakistan works with a diverse range of institutional, educational, government, and ecosystem partners. The following organizations have signed official Memorandums of Understanding (MOUs) or maintain strategic collaborations with GEN Pakistan
+            </p>
+        </div>
+    </section>
+
+    {{-- Page Heading --}}
     <section class="py-16 md:py-20 bg-slate-50 border-b border-slate-100">
         <div class="container-custom max-w-6xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-                Our Partners in Pakistan
+                ECOSYSTEM PARTNERS
             </h1>
         </div>
     </section>
@@ -61,6 +70,18 @@
 
         </div>
 
+    </section>
+
+    {{-- Closing Paragraph --}}
+    <section class="py-16 md:py-20 bg-slate-50 border-b border-slate-100 mt-16">
+        <div class="container-custom max-w-6xl mx-auto text-center">
+            <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+                If you are interested in entering into a non-financial partnership with GEN, please apply here. Please note that GEN requires a minimum of three-year partnership timelines to allow the parties to develop usual and relevant support for each other's programs. For further information please email awaqarmohsin@genglobal.org and the appropriate GEN Team member will respond within 2 business days.
+            </p>
+            <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+                For questions about sponsorships or grant related partnerships, please contact Alejandra Molina at awaqarmohsin@genglobal.org.
+            </p>
+        </div>
     </section>
 
 </main>

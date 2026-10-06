@@ -68,11 +68,11 @@
                                     <!-- About GEN Pakistan -->
                                     <a href="/about" class="group/item block">
                                         <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
-                                            About (GEN Pakistan)
+                                            About GEN Pakistan
                                         </h4>
 
                                         <p class="text-[13px] text-slate-500 leading-relaxed">
-                                            GEN Pakistan's role in strengthening the local entrepreneurship ecosystem.
+                                            GEN Pakistan is the official representative body of Global Entrepreneurship Network in Pakistan.
                                         </p>
                                     </a>
 
@@ -84,7 +84,7 @@
                                         </h4>
 
                                         <p class="text-[13px] text-slate-500 leading-relaxed">
-                                            Discover the organizations working with GEN Pakistan.
+                                            A range of organizations and institutions contributing expertise, experience and energy in Pakistan.
                                         </p>
                                     </a>
 
@@ -130,7 +130,7 @@
                                             National Internship Program (NIP)
                                         </h4>
                                         <p class="text-[13px] text-slate-500 leading-relaxed">
-                                            National internship opportunities designed to engage and develop emerging talent.
+                                            The National Internship Program (NIP) is a GEN-Pakistan initiative connecting corporate partners with emerging talent to drive youth employment.
                                         </p>
                                     </a>
 
@@ -139,7 +139,7 @@
                                             Youth Ambassador Program (YAP)
                                         </h4>
                                         <p class="text-[13px] text-slate-500 leading-relaxed">
-                                            Empowering young ambassadors to contribute to the GEN entrepreneurship ecosystem.
+                                            Empowering and upskilling the youth of Pakistan nationally and globally.
                                         </p>
                                     </a>
                                 </div>
