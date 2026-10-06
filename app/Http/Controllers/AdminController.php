@@ -269,27 +269,35 @@ class AdminController extends Controller
     {
         $partners = PartnersPage::first();
 
-        $cleanPartners = function ($partners) {
-            return collect($partners ?? [])
-                ->map(fn ($partner) => trim($partner))
-                ->filter()
-                ->values()
-                ->all();
-        };
+        $sections = collect($request->partner_sections ?? [])
+            ->map(function ($section) {
+
+                $sectionPartners = collect($section['partners'] ?? [])
+                    ->map(function ($partner) {
+                        return [
+                            'logo' => trim($partner['logo'] ?? ''),
+                            'url' => trim($partner['url'] ?? ''),
+                        ];
+                    })
+                    ->filter(function ($partner) {
+                        return $partner['logo'] !== '' || $partner['url'] !== '';
+                    })
+                    ->values()
+                    ->all();
+
+                return [
+                    'heading' => trim($section['heading'] ?? ''),
+                    'partners' => $sectionPartners,
+                ];
+            })
+            ->filter(function ($section) {
+                return $section['heading'] !== '' || count($section['partners']) > 0;
+            })
+            ->values()
+            ->all();
 
         $partners->update([
-            'page_heading' => $request->page_heading,
-            'introduction' => $request->introduction,
-            'platinum_partners' => $cleanPartners($request->platinum_partners),
-            'silver_partners' => $cleanPartners($request->silver_partners),
-            'bronze_partners' => $cleanPartners($request->bronze_partners),
-            'ecosystem_partners' => $cleanPartners($request->ecosystem_partners),
-            'partnership_text' => $request->partnership_text,
-            'apply_url' => $request->apply_url,
-            'local_partnership_url' => $request->local_partnership_url,
-            'contact_text' => $request->contact_text,
-            'contact_person' => $request->contact_person,
-            'contact_email' => $request->contact_email,
+            'partner_sections' => $sections,
         ]);
 
         return redirect('/admin/partners');
