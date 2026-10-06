@@ -35,7 +35,7 @@
 
                                 <div class="flex flex-col gap-6">
 
-                                    <a href="/about" class="group/item block">
+                                    <a href="https://www.genglobal.org/about" class="group/item block">
                                         <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
                                             About GEN
                                         </h4>
@@ -44,7 +44,7 @@
                                         </p>
                                     </a>
 
-                                    <a href="/partners" class="group/item block">
+                                    <a href="https://www.genglobal.org/partners" class="group/item block">
                                         <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
                                             Our Partners
                                         </h4>
@@ -56,32 +56,64 @@
                             </div>
 
 
-                            <!-- NATIONAL LEADERSHIP -->
+                            <!-- NATIONAL -->
                             <div class="w-[220px] flex flex-col">
+
                                 <h3 class="text-[11px] font-bold text-slate-400 tracking-[0.15em] uppercase mb-5 h-4">
-                                    NATIONAL LEADERSHIP
+                                    NATIONAL
                                 </h3>
 
                                 <div class="flex flex-col gap-6">
 
+                                    <!-- About GEN Pakistan -->
+                                    <a href="/about" class="group/item block">
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            About (GEN Pakistan)
+                                        </h4>
+
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            GEN Pakistan's role in strengthening the local entrepreneurship ecosystem.
+                                        </p>
+                                    </a>
+
+
+                                    <!-- Our Partners GEN Pakistan -->
+                                    <a href="/partners" class="group/item block">
+                                        <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
+                                            Our Partners (GEN Pakistan)
+                                        </h4>
+
+                                        <p class="text-[13px] text-slate-500 leading-relaxed">
+                                            Discover the organizations working with GEN Pakistan.
+                                        </p>
+                                    </a>
+
+
+                                    <!-- Top Leadership -->
                                     <a href="/top-leadership" class="group/item block">
                                         <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
                                             Top Leadership
                                         </h4>
+
                                         <p class="text-[13px] text-slate-500 leading-relaxed">
                                             Meet the leaders guiding GEN Pakistan's strategic direction and growth.
                                         </p>
                                     </a>
 
+
+                                    <!-- Regional Leadership -->
                                     <a href="/regional-leadership" class="group/item block">
                                         <h4 class="text-[15px] font-bold text-slate-800 group-hover/item:text-corporate-accent mb-1.5 transition-colors duration-300">
                                             Regional Leadership
                                         </h4>
+
                                         <p class="text-[13px] text-slate-500 leading-relaxed">
                                             Meet the leaders supporting regional engagement and entrepreneurship initiatives.
                                         </p>
                                     </a>
+
                                 </div>
+
                             </div>
 
 

@@ -251,14 +251,8 @@ class AdminController extends Controller
         $about = AboutPage::first();
 
         $about->update([
-            'page_heading' => $request->page_heading,
-            'video_title' => $request->video_title,
-            'video_url' => $request->video_url,
-            'article_heading' => $request->article_heading,
+            'top_image' => $request->top_image,
             'article_content' => $request->article_content,
-            'core_pillars' => $request->core_pillars,
-            'impact_heading' => $request->impact_heading,
-            'impact_items' => $request->impact_items,
         ]);
 
         return redirect('/admin/about');
