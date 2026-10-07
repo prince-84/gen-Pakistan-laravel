@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\AboutPage;
 use App\Models\PartnersPage;
+use App\Models\TopLeadershipPage;
 use App\Models\ContactPage;
 
 class PageController extends Controller
@@ -16,7 +17,9 @@ class PageController extends Controller
 
     public function topLeadership()
     {
-        return view('pages.about.top-leadership');
+        $leadership = TopLeadershipPage::first();
+
+        return view('pages.about.top-leadership', compact('leadership'));
     }
 
     public function regionalLeadership()

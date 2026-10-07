@@ -64,6 +64,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/partners', [AdminController::class, 'editPartners']);
     Route::put('/admin/partners', [AdminController::class, 'updatePartners']);
 
+    Route::get('/admin/top-leadership', [AdminController::class, 'editTopLeadership']);
+    Route::put('/admin/top-leadership', [AdminController::class, 'updateTopLeadership']);
+
     Route::get('/admin/account', [AccountController::class, 'edit']);
     Route::put('/admin/account/email', [AccountController::class, 'updateEmail']);
     Route::put('/admin/account/password', [AccountController::class, 'updatePassword']);

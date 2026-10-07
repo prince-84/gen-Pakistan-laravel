@@ -76,10 +76,10 @@
     <section class="py-16 md:py-20 bg-slate-50 border-b border-slate-100 mt-16">
         <div class="container-custom max-w-6xl mx-auto text-center">
             <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-                If you are interested in entering into a non-financial partnership with GEN, please apply here. Please note that GEN requires a minimum of three-year partnership timelines to allow the parties to develop usual and relevant support for each other's programs. For further information please email awaqarmohsin@genglobal.org and the appropriate GEN Team member will respond within 2 business days.
+                If you are interested in entering into a non-financial partnership with GEN, please apply here. Please note that GEN requires a minimum of three-year partnership timelines to allow the parties to develop usual and relevant support for each other's programs. For further information please email <a href="mailto:awaqarmohsin@genglobal.org" class="text-blue-500 hover:underline">awaqarmohsin@genglobal.org</a> and the appropriate GEN Team member will respond within 2 business days.
             </p>
             <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-                For questions about sponsorships or grant related partnerships, please contact Alejandra Molina at awaqarmohsin@genglobal.org.
+                For questions about sponsorships or grant related partnerships, please contact Alejandra Molina at <a href="mailto:awaqarmohsin@genglobal.org" class="text-blue-500 hover:underline">awaqarmohsin@genglobal.org</a>.
             </p>
         </div>
     </section>

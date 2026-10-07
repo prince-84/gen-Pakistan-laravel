@@ -213,32 +213,30 @@
                         @enderror
                     </div>
 
-
-                    {{-- Twitter / X --}}
+                    {{-- YouTube --}}
                     <div>
                         <label
-                            for="twitter_url"
+                            for="youtube_url"
                             class="block text-sm font-semibold text-slate-700 mb-2"
                         >
-                            Twitter / X URL
+                            YouTube URL
                         </label>
 
                         <input
-                            id="twitter_url"
+                            id="youtube_url"
                             type="url"
-                            name="twitter_url"
-                            value="{{ old('twitter_url', $contact->twitter_url === '#' ? '' : $contact->twitter_url) }}"
-                            placeholder="https://x.com/..."
+                            name="youtube_url"
+                            value="{{ old('youtube_url', $contact->youtube_url === '#' ? '' : $contact->youtube_url) }}"
+                            placeholder="https://www.youtube.com/..."
                             class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:outline-none focus:border-corporate-primary focus:ring-2 focus:ring-corporate-primary/10"
                         >
 
-                        @error('twitter_url')
+                        @error('youtube_url')
                             <p class="mt-2 text-sm text-red-600">
                                 {{ $message }}
                             </p>
                         @enderror
                     </div>
-
 
                     {{-- LinkedIn --}}
                     <div>

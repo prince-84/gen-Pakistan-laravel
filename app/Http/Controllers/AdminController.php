@@ -9,6 +9,7 @@ use App\Models\HomepageResource;
 use App\Models\HomepageNews;
 use App\Models\AboutPage;
 use App\Models\PartnersPage;
+use App\Models\TopLeadershipPage;
 use App\Models\ContactPage;
 use Illuminate\Http\Request;
 
@@ -303,6 +304,53 @@ class AdminController extends Controller
         return redirect('/admin/partners');
     }
 
+    public function editTopLeadership()
+    {
+        $leadership = TopLeadershipPage::first();
+
+        if (!$leadership) {
+            $leadership = TopLeadershipPage::create([
+                'leaders' => [],
+            ]);
+        }
+
+        return view('admin.top-leadership.edit', compact('leadership'));
+    }
+
+    public function updateTopLeadership(Request $request)
+    {
+        $leadership = TopLeadershipPage::first();
+
+        if (!$leadership) {
+            $leadership = TopLeadershipPage::create([
+                'leaders' => [],
+            ]);
+        }
+
+        $leaders = collect($request->leaders ?? [])
+            ->map(function ($leader) {
+                return [
+                    'name' => trim($leader['name'] ?? ''),
+                    'country' => trim($leader['country'] ?? ''),
+                    'role' => trim($leader['role'] ?? ''),
+                    'organization' => trim($leader['organization'] ?? ''),
+                    'photo' => trim($leader['photo'] ?? ''),
+                    'profile_url' => trim($leader['profile_url'] ?? ''),
+                ];
+            })
+            ->filter(function ($leader) {
+                return $leader['name'] !== '';
+            })
+            ->values()
+            ->all();
+
+        $leadership->update([
+            'leaders' => $leaders,
+        ]);
+
+        return redirect('/admin/top-leadership');
+    }
+
     public function editContact()
     {
         $contact = ContactPage::first();
@@ -323,6 +371,7 @@ class AdminController extends Controller
             'facebook_url' => ['nullable', 'url'],
             'twitter_url' => ['nullable', 'url'],
             'linkedin_url' => ['nullable', 'url'],
+            'youtube_url' => ['nullable', 'url'],
             'instagram_url' => ['nullable', 'url'],
         ]);
 

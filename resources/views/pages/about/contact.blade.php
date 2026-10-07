@@ -12,7 +12,6 @@
             <div class="flex flex-col lg:flex-row gap-16 md:gap-24">
 
                 {{-- Left Column: Form --}}
-                {{-- Left Column: Form --}}
 
 <div class="w-full lg:w-[60%]">
 
@@ -220,13 +219,6 @@
             Send message
         </button>
 
-        <button
-            type="button"
-            class="px-8 py-3 bg-[#E61C24] hover:bg-red-700 text-white font-bold text-sm rounded transition-colors shadow-sm"
-        >
-            Preview
-        </button>
-
     </div>
 
 </form>
@@ -252,198 +244,191 @@
 
 </div>
 
-
-                {{-- Right Column: Contact Information --}}
-
+{{-- Right Column: Contact Information --}}
 <div class="w-full lg:w-[40%]">
 
-<h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.25em] mb-8">
-    CONTACT GEN
-</h2>
+    {{-- Contact GEN --}}
+    <div class="mb-14">
 
-<div class="space-y-6 text-[14px] text-slate-600 leading-relaxed mb-10">
+        <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.25em] mb-8">
+            CONTACT GEN
+        </h2>
 
-    <p>
-        {{ $contact->intro_paragraph_1 }}
-    </p>
+        <div class="space-y-6 text-[14px] text-slate-600 leading-relaxed">
 
-    <p>
-        {{ $contact->intro_paragraph_2 }}
-    </p>
+            <p>
+                {{ $contact->intro_paragraph_1 }}
+            </p>
 
-    <p>
-        {{ $contact->intro_paragraph_3 }}
-    </p>
+            <p>
+                {{ $contact->intro_paragraph_2 }}
+            </p>
 
-</div>
+            <p>
+                {{ $contact->intro_paragraph_3 }}
+            </p>
 
+            @if ($contact->phone)
 
-{{-- Phone Number --}}
-@if ($contact->phone)
+                <p>
+                    <a
+                        href="tel:{{ preg_replace('/[^0-9+]/', '', $contact->phone) }}"
+                        class="inline-flex items-center gap-2 text-corporate-accent hover:text-red-700 transition-colors"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 1.98 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .72 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
 
-    <div class="flex items-center gap-3 mb-10">
+                        {{ $contact->phone }}
+                    </a>
+                </p>
 
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-corporate-accent"
-        >
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 1.98 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .72 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 1 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </svg>
+            @endif
 
-        <a
-            href="tel:{{ preg_replace('/[^0-9+]/', '', $contact->phone) }}"
-            class="text-lg font-bold text-corporate-accent hover:text-red-700 transition-colors"
-        >
-            {{ $contact->phone }}
-        </a>
+        </div>
 
     </div>
 
-@endif
 
+    {{-- About GEN --}}
+    <div class="mb-14">
 
-{{-- Quote Box --}}
-<div class="bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-xl p-8 mb-12 relative">
+        <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.25em] mb-6">
+            ABOUT GEN
+        </h2>
 
-    <div class="absolute -top-3 -left-2 text-4xl text-slate-200 font-serif leading-none opacity-50">
-        "
+        <p class="text-[14px] text-slate-600 leading-relaxed">
+            The Global Entrepreneurship Network operates programs in 200 countries aimed at making it easier for anyone, anywhere to start and scale a business.
+        </p>
+
     </div>
 
-    <p class="text-[14px] text-slate-500 italic leading-relaxed relative z-10">
-        {{ $contact->quote }}
-    </p>
 
-    <div class="absolute -bottom-6 -right-2 text-4xl text-slate-200 font-serif leading-none opacity-50">
-        "
-    </div>
+    {{-- Social Follow --}}
+    <div>
 
-</div>
+        <h2 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.25em] mb-5">
+            FOLLOW GEN
+        </h2>
 
+        <div class="flex items-center gap-4">
 
-{{-- Social Follow --}}
-<div>
+            {{-- Facebook --}}
+            @if ($contact->facebook_url)
 
-    <h3 class="text-[11px] font-black text-slate-400 uppercase tracking-[0.25em] mb-4">
-        FOLLOW GEN
-    </h3>
-
-    <div class="flex items-center gap-4">
-
-        {{-- Facebook --}}
-        @if ($contact->facebook_url)
-            <a
-                href="{{ $contact->facebook_url }}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                <a
+                    href="{{ $contact->facebook_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors"
                 >
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                </svg>
-            </a>
-        @endif
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                    >
+                        <path d="M14 8h3V4h-3c-3.31 0-6 2.69-6 6v2H5v4h3v8h4v-8h4l1-4h-5v-2c0-1.1.9-2 2-2z"/>
+                    </svg>
+                </a>
+
+            @endif
 
 
-        {{-- Twitter / X --}}
-        @if ($contact->twitter_url)
-            <a
-                href="{{ $contact->twitter_url }}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            {{-- LinkedIn --}}
+            @if ($contact->linkedin_url)
+
+                <a
+                    href="{{ $contact->linkedin_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors"
                 >
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-                </svg>
-            </a>
-        @endif
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                    >
+                        <path d="M6.94 8.5H3.5V21h3.44V8.5zM5.22 3A2.01 2.01 0 1 0 5.22 7.02 2.01 2.01 0 0 0 5.22 3zM20.5 13.1c0-3.77-2.01-5.53-4.7-5.53-2.17 0-3.14 1.2-3.68 2.04V8.5H8.68V21h3.44v-6.18c0-1.63.31-3.21 2.33-3.21 1.99 0 2.02 1.87 2.02 3.31V21h3.44l.01-7.9z"/>
+                    </svg>
+                </a>
+
+            @endif
 
 
-        {{-- LinkedIn --}}
-        @if ($contact->linkedin_url)
-            <a
-                href="{{ $contact->linkedin_url }}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            {{-- Instagram --}}
+            @if ($contact->instagram_url)
+
+                <a
+                    href="{{ $contact->instagram_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors"
                 >
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                    <rect width="4" height="12" x="2" y="9"/>
-                    <circle cx="4" cy="4" r="2"/>
-                </svg>
-            </a>
-        @endif
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <rect width="20" height="20" x="2" y="2" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>
+                    </svg>
+                </a>
+
+            @endif
 
 
-        {{-- Instagram --}}
-        @if ($contact->instagram_url)
-            <a
-                href="{{ $contact->instagram_url }}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            {{-- YouTube --}}
+            @if ($contact->youtube_url)
+
+                <a
+                    href="{{ $contact->youtube_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-corporate-accent hover:border-corporate-accent transition-colors"
                 >
-                    <rect width="20" height="20" x="2" y="2" rx="5"/>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-                </svg>
-            </a>
-        @endif
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                    >
+                        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.8V8.2l6.5 3.8-6.5 3.8z"/>
+                    </svg>
+                </a>
+
+            @endif
+
+        </div>
 
     </div>
 
 </div>
-
 
 </div>
 
